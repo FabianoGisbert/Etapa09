@@ -1,0 +1,17 @@
+---
+ aws_access_key: "AKIAV7WTWXP6DPMAC5SY"
+ aws_secret_key: "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"
+
+ application: "wordpress"
+ target_env: "prod"
+ aws_region: "us-east-1"
+ aws_region_short: "ue1"
+ aws_region_az: "c"
+ vpc_name: "vpc-{{ aws_region_short }}-{{ target_env }}-{{ application }}"
+ vpc_cidr_block: "172.27.0.0/16"
+ public_subnet_1_cidr: "172.27.0.0/18"
+ public_subnet_2_cidr: "172.27.64.0/18"
+ private_subnet_1_cidr: "172.27.128.0/18"
+ private_subnet_2_cidr: "172.27.192.0/18"
+ keypair_name: "analista-key"
+ ssh_pubkey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDH4pHUu+I+CbATVDgB6CudJJMeW2CCym5IoutUjLufJVCXatTmS0adop0MzP0ZS3UJMLWcuiNFXLS5yidRGn49qZelwg85+K3mv4TOX4Co/HtOGss1wNh0Y0ka3a4fg/Iwl/V0eQdo7Js442+HGuxX0Bgr3tLfJCYyCZeBaAfiJku1HgPlHv+yFMOk1PkFF7QSahsOHmmkHHCeBwA0mJy3GVv38+gfyxjfskO4yPzQM5Wq6Sk3yTXNuI8My2+j2thOFH9TAX4PxugAzfmzMxvaOrqFH4Dre9USdKQkNbMvdoa4X0tAi2UoCu1W1Gv3ai7JHx6y5cJG92jyNcsG1tWtMOVP+HDd5BnmmovEUMx0GThHFLXTvBzo+JtDB5JBERL/BxkHhwrElNQSe68SeMso2klMuqE0+W0Xl2QmVYgTlhDLcAezqyLvPx6cjV505tuFiOq6A5uSlSMx1V70hMi2qCK31a5RguF2s3ETT9nVpDFg8WUpvgKibqREyZpu0FU= analista@analista'

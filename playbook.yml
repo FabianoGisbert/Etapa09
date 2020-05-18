@@ -1,0 +1,7 @@
+---
+ - hosts: localhost
+   connection: local
+   roles:
+    - { role: keypair, tags: [ 'keypairs', 'infra' ] }
+    - { role: vpc, tags: [ 'vpc', 'infra', 'always' ] }
+    - { role: app-ec2, tags: [ 'app-ec2', 'infra' ] }
