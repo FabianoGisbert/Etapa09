@@ -5,3 +5,23 @@
     - { role: keypair, tags: [ 'keypairs', 'infra' ] }
     - { role: vpc, tags: [ 'vpc', 'infra', 'always' ] }
     - { role: app-ec2, tags: [ 'app-ec2', 'infra' ] }
+
+ - hosts: tag_Name_app
+   remote_user: ubuntu
+   gather_facts: no
+   pre_tasks:
+    - name: instala o Python 2
+      raw: sudo bash -c "test -e /usr/bin/python || (apt -y update && apt install -y python-minimal aptitude)"
+      tags: [ 'always' ]
+    - name: reune informacoes sobre o sistema operacional
+      setup:
+      tags: [ 'always' ]
+    - name: atualiza os pacotes do SO
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 3600
+      tags: [ 'app' ]
+   roles:
+    - { role: docker, tags: [ 'docker' ] }
+    - { role: wordpress, tags: [ 'app', 'wordpress' ] }

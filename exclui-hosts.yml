@@ -1,0 +1,13 @@
+---
+ # Exemplo basico de exclusao de hosts
+ - name: Exclui instancias EC2 de desenvolvimento
+   hosts: vpc_id_vpc-0e0d790326268f5a9 
+   connection: local
+   gather_facts: False
+   tasks:
+   - name: Exclui a instancia {{ ec2_id }} da regiao {{ aws_region }}
+     local_action:
+         module: ec2
+         state: 'absent'
+         region: '{{ aws_region }}'
+         instance_ids: '{{ ec2_id }}'

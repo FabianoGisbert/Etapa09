@@ -1,6 +1,6 @@
 ---
- aws_access_key: "AKIAV7WTWXP6DPMAC5SY"
- aws_secret_key: "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"
+ aws_access_key: "AKIAV7WTWXP6PMWCCY7Y"
+ aws_secret_key: "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"
 
  application: "wordpress"
  target_env: "prod"
