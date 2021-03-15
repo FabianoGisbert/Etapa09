@@ -9,5 +9,5 @@
      local_action:
          module: ec2
          state: 'absent'
-         region: '{{ aws_region }}'
+         region: '{{ ec2_region }}'
          instance_ids: '{{ ec2_id }}'
