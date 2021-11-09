@@ -7,7 +7,7 @@
     - { role: app-ec2, tags: [ 'app-ec2', 'infra' ] }
 
  - hosts: tag_Name_app
-   remote_user: ubuntu
+   remote_user: 
    gather_facts: no
    pre_tasks:
     - name: instala o Python 2
